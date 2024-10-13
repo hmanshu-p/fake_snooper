@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "News Verifier",
+  "version": "1.0",
+  "description": "Verifies news articles as real or fake",
+  "permissions": ["activeTab"],
+  "host_permissions": [
+    "http://localhost/*",
+    "http://localhost:5000/"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
